@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "KC/OsNwG4nvHbbkBgdARKXwyJ7r/lwYzQ51ydBDhTLQ=",
+  "Source": "Practica.WebAPI.Controllers",
+  "BasePath": "_content/Practica.WebAPI.Controllers",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
