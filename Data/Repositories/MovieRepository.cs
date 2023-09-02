@@ -5,9 +5,9 @@ namespace Practica.WebAPI.Controllers.Data.Repositories
 {
     public class MovieRepository : IMovieRepository
     {
-        private readonly MoviesDbContext _dbContext;
+        private readonly VideoDbContext _dbContext;
 
-        public MovieRepository(MoviesDbContext dbContext)
+        public MovieRepository(VideoDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -19,7 +19,7 @@ namespace Practica.WebAPI.Controllers.Data.Repositories
 
         public Movie GetMovieById(int id)
         {
-            return _dbContext.Movies.FirstOrDefault(m => m.Id == id);
+            return _dbContext.Movies.FirstOrDefault(m => m.MovieId == id);
         }
 
         public void CreateMovie(Movie movie)
@@ -36,7 +36,7 @@ namespace Practica.WebAPI.Controllers.Data.Repositories
 
         public void DeleteMovie(int id)
         {
-            var movie = _dbContext.Movies.FirstOrDefault(m => m.Id == id);
+            var movie = _dbContext.Movies.FirstOrDefault(m => m.MovieId == id);
             if (movie != null)
             {
                 _dbContext.Movies.Remove(movie);

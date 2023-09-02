@@ -5,9 +5,9 @@ namespace Practica.WebAPI.Controllers.Data.Repositories
 {
     public class PartnerRepository : IPartnerRepository
     {
-        private readonly PartnersDbContext _dbContext;
+        private readonly VideoDbContext _dbContext;
 
-        public PartnerRepository(PartnersDbContext dbContext)
+        public PartnerRepository(VideoDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -19,7 +19,7 @@ namespace Practica.WebAPI.Controllers.Data.Repositories
 
         public Partner GetPartnerById(int id)
         {
-            return _dbContext.Partners.FirstOrDefault(p => p.Id == id);
+            return _dbContext.Partners.FirstOrDefault(p => p.PartnerId == id);
         }
 
         public void CreatePartner(Partner partner)
@@ -36,7 +36,7 @@ namespace Practica.WebAPI.Controllers.Data.Repositories
 
         public void DeletePartner(int id)
         {
-            var partner = _dbContext.Partners.FirstOrDefault(p => p.Id == id);
+            var partner = _dbContext.Partners.FirstOrDefault(p => p.PartnerId == id);
             if (partner != null)
             {
                 _dbContext.Remove(partner);

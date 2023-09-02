@@ -44,7 +44,7 @@ namespace Practica.WebAPI.Controllers.Controllers
         public IActionResult PostMovie(Movie movie)
         {
             _movieRepository.CreateMovie(movie);
-            return CreatedAtAction(nameof(GetMovie), new { id = movie.Id }, movie);
+            return CreatedAtAction(nameof(GetMovie), new { id = movie.MovieId }, movie);
         }
 
         // PUT: api/Movies/5

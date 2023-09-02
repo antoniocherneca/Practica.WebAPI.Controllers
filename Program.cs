@@ -17,16 +17,12 @@ namespace Practica.WebAPI.Controllers
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            builder.Services.AddDbContext<MoviesDbContext>(options =>
+            builder.Services.AddDbContext<VideoDbContext>(options =>
             {
-                options.UseInMemoryDatabase("MoviesDb");
+                options.UseInMemoryDatabase("VideossDb");
             });
             builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 
-            builder.Services.AddDbContext<PartnersDbContext>(options =>
-            {
-                options.UseInMemoryDatabase("PartnersDb");
-            });
             builder.Services.AddScoped<IPartnerRepository, PartnerRepository>();
 
             var app = builder.Build();
@@ -41,7 +37,6 @@ namespace Practica.WebAPI.Controllers
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

@@ -49,7 +49,7 @@ namespace Practica.WebAPI.Controllers.Controllers
         public IActionResult PostPartner(Partner partner)
         {
             _partnerRepository.CreatePartner(partner);
-            return CreatedAtAction(nameof(GetPartner), new { id = partner.Id }, partner);
+            return CreatedAtAction(nameof(GetPartner), new { id = partner.PartnerId }, partner);
         }
 
         [HttpPut("{id}")]
